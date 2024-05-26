@@ -14,6 +14,8 @@ void bubble_sort(int *array, size_t size)
 	bool swap_flag;
 	size_t sequence, i, j;
 
+	if (array == NULL || size == 0)
+		return;
 	sequence = size;
 	do {
 		i = 0;
@@ -43,7 +45,7 @@ void bubble_sort(int *array, size_t size)
  */
 void _swap(int *a, int *b)
 {
-	size_t temp;
+	int temp;
 
 	temp = *a;
 	*a = *b;
