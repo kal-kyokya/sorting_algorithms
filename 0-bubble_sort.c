@@ -3,7 +3,7 @@
 void _swap(int *a, int *b);
 
 /**
- * bubble_sort - Bubble sorts an integer array. 
+ * bubble_sort - Bubble sorts an integer array.
  * @array: Collection of integers to be sorted.
  * @size: Size of the array parameter.
  *
@@ -15,8 +15,7 @@ void bubble_sort(int *array, size_t size)
 	size_t sequence, i, j;
 
 	sequence = size;
-	do
-	{
+	do {
 		i = 0;
 		j = 1;
 		swap_flag = false;
@@ -32,8 +31,7 @@ void bubble_sort(int *array, size_t size)
 			j++;
 		}
 		sequence--;
-	}
-	while (swap_flag);
+	} while (swap_flag);
 }
 
 /**
