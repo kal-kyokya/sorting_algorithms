@@ -9,14 +9,24 @@
  */
 int main(void)
 {
-	int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-	size_t n = sizeof(array) / sizeof(array[0]);
+	int array1[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
+	int array2[] = {7, 13, 19, 48, 52, 71, 73, 86, 96, 99};
+	size_t n1 = sizeof(array1) / sizeof(array1[0]);
+	size_t n2 = sizeof(array2) / sizeof(array2[0]);
 
-	print_array(array, n);
+	print_array(array1, n1);
 	printf("\n");
-	bubble_sort(array, n);
+	bubble_sort(array1, n1);
 	printf("\n");
-	print_array(array, n);
+	print_array(array1, n1);
+	printf("-----------\n");
+
+	print_array(array2, n2);
+	printf("\n");
+	bubble_sort(array2, n2);
+	printf("\n");
+	print_array(array2, n2);
+	printf("-----------\n");
 
 	return (0);
 }
