@@ -18,21 +18,21 @@ int main(void)
 
 	print_array(array, n);
 	printf("\n");
-	selection_sort(array, n);
+	quick_sort(array, n);
 	printf("\n");
 	print_array(array, n);
 	printf("-----------\n");
 
 	print_array(array2, n2);
 	printf("\n");
-	selection_sort(array2, n2);
+	quick_sort(array2, n2);
 	printf("\n");
 	print_array(array2, n2);
 	printf("-----------\n");
 
 	print_array(array3, n3);
 	printf("\n");
-	selection_sort(array3, n3);
+	quick_sort(array3, n3);
 	printf("\n");
 	print_array(array3, n3);
 
