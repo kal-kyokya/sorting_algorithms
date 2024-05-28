@@ -54,25 +54,25 @@ int lomuto_partition(int *array, size_t left, size_t right)
 	int *current, *pvt_ptr, *pivot;
 	int index;
 
-	if (array == NULL || left == right)
+	if (array == NULL || left >= right)
 		return (-1);
 	index = (int)right;
-	pivot = &array[left];
-	pvt_ptr = &array[right];;
-	current = &array[right];
+	pivot = array + left;
+	pvt_ptr = array + (right + 1);
+	current = array + right;
 	while (current != pivot)
 	{
 		if (*current >= *pivot)
 		{
+			pvt_ptr = pvt_ptr - 1;
 			_swap(current, pvt_ptr);
-			pvt_ptr -= 1;
 			index -= 1;
 			print_array(array, right);
 		}
 
 		current -= 1;
 	}
-	_swap(pivot, pvt_ptr);
+	_swap(pivot, pvt_ptr - 1);
 
 	return (index);
 }
