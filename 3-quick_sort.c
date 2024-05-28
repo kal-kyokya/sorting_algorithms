@@ -12,29 +12,26 @@ void _swap(int *a, int *b);
  */
 void quick_sort(int *array, size_t size)
 {
-	size_t index;
-	int pivot, pvt_idx;
+	int pivot;
+	int *pvt_ptr, *current;
 
 	if (array == NULL || size < 2)
 		return;
-
-	pvt_idx = (int)size - 1;
-	printf("pvt_idx: %i\n", pvt_idx);
-	pivot = array[pvt_idx];
-	index =  0;
-	printf("pivot: %i\n", pivot);
-	while (index < size)
+	pivot = array[0];
+	current = &array[size - 1];
+	pvt_ptr = &array[size - 1];
+	while (current != &array[0])
 	{
-		if (pivot < array[index] && pvt_idx < (int)index)
-			index++;
-		else
+		if (*current > pivot)
 		{
-			_swap(&array[pvt_idx], &array[index]);
-			pvt_idx = index;
+			_swap(current, pvt_ptr);
+			pvt_ptr -= 1;
 			print_array(array, size);
-			index++;
 		}
+
+		current -= 1;
 	}
+	_swap(&array[0], pvt_ptr);
 }
 
 

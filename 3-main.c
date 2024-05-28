@@ -13,7 +13,7 @@ int main(void)
 	size_t n = sizeof(array) / sizeof(array[0]);
 	int array2[] = {7, 13, 19, 48, 52, 71, 73, 86, 96, 99};
 	size_t n2 = sizeof(array2) / sizeof(array2[0]);
-	int array3[] = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+	int array3[] = {6, 5, 1, 7, 3, 8, 2, 4, 5, 9};
 	size_t n3 = sizeof(array3) / sizeof(array3[0]);
 
 	print_array(array, n);
