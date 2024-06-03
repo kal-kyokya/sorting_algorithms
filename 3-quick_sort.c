@@ -14,10 +14,6 @@ void helper(int *array, size_t index, size_t size);
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL || size < 2)
-		return;
-
-	helper(array, 0, size - 1);
 }
 
 /**
@@ -31,13 +27,6 @@ void quick_sort(int *array, size_t size)
  */
 void helper(int *array, size_t left, size_t right)
 {
-	int pivot;
-
-	if (array == NULL || left >= right)
-		return;
-	pivot = lomuto_partition(array, left, right);
-	helper(array, left, pivot - 1);
-	helper(array, pivot + 1, right);
 }
 
 /**
@@ -51,30 +40,6 @@ void helper(int *array, size_t left, size_t right)
  */
 int lomuto_partition(int *array, size_t left, size_t right)
 {
-	int *current, *pvt_ptr, *pivot;
-	int index;
-
-	if (array == NULL || left >= right)
-		return (-1);
-	index = (int)right;
-	pivot = array + left;
-	pvt_ptr = array + (right + 1);
-	current = array + right;
-	while (current != pivot)
-	{
-		if (*current >= *pivot)
-		{
-			pvt_ptr = pvt_ptr - 1;
-			_swap(current, pvt_ptr);
-			index -= 1;
-			print_array(array, right);
-		}
-
-		current -= 1;
-	}
-	_swap(pivot, pvt_ptr - 1);
-
-	return (index);
 }
 
 /**
@@ -86,9 +51,4 @@ int lomuto_partition(int *array, size_t left, size_t right)
  */
 void _swap(int *a, int *b)
 {
-	int temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
 }

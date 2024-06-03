@@ -31,29 +31,30 @@ void swap_ints(int *a, int *b)
  */
 int lomuto_partition(int *array, size_t size, int left, int right)
 {
-	int *pivot, above, below;
+	int *pivot, pvt_ptr, current;
 
 	pivot = array + right;
-	for (above = below = left; below < right; below++)
+	for (pvt_ptr = current = left; current < right; current++)
 	{
-		if (array[below] < *pivot)
+		if (array[current] < *pivot)
 		{
-			if (above < below)
+			if (pvt_ptr < current)
 			{
-				swap_ints(array + below, array + above);
+				swap_ints(array + current, array + pvt_ptr);
 				print_array(array, size);
 			}
-			above++;
+			pvt_ptr++;
 		}
 	}
 
-	if (array[above] > *pivot)
+	if (array[pvt_ptr] > *pivot)
 	{
-		swap_ints(array + above, pivot);
+		swap_ints(array + pvt_ptr, pivot);
 		print_array(array, size);
 	}
+	printf("pvt_ptr: %i\n", pvt_ptr);
 
-	return (above);
+	return (pvt_ptr);
 }
 
 /**
